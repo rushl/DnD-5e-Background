@@ -608,7 +608,7 @@ var Class = {
 var Occupation = { 
 	"Dice": "1d100",
 	"01-05": "Academic",
-	"06-10": "Adventurer (#Class)",
+	"06-10": "Adventurer - #Class; #Background",
 	"11": "Aristocrat",
 	"12-26": "Artisan or guild member",
 	"27-31": "Criminal",
