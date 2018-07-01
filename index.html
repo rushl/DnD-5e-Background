@@ -86,18 +86,40 @@
 		<option value="Acolyte">Acolyte</option>
 		<option value="Charlatan">Charlatan</option>
 		<option value="Criminal">Criminal</option>
+		<option value="Criminal">Spy (Criminal)</option>
 		<option value="Entertainer">Entertainer</option>
+		<option value="Entertainer">Gladiator (Entertainer)</option>
 		<option value="FolkHero">Folk Hero</option>
 		<option value="GuildArtisan">Guild Artisan</option>
+		<option value="GuildArtisan">Guild Merchant (Guild Artisan)</option>
 		<option value="Hermit">Hermit</option>
 		<option value="Noble">Noble</option>
+		<option value="Noble">Knight (Noble)</option>
 		<option value="Outlander">Outlander</option>
 		<option value="Sage">Sage</option>
 		<option value="Sailor">Sailor</option>
+		<option value="Sailor">Pirate (Sailor)</option>
 		<option value="Soldier">Soldier</option>
 		<option value="Urchin">Urchin</option>
+		<option value="Soldier">City Watch</option>
+		<option value="Soldier">Investigator (City Watch)</option>
+		<option value="GuildArtisan">Clan Crafter</option>
+		<option value="Sage">Cloistered Scholar</option>
+		<option value="GuildArtisan">Courtier</option>
+		<option value="Acolyte">Faction Agent, Harpers</option>
+		<option value="Acolyte">Faction Agent, Order of the Gauntlet</option>
+		<option value="Acolyte">Faction Agent, Emerald Enclave</option>
+		<option value="Acolyte">Faction Agent, Lord's Alliance</option>
+		<option value="Acolyte">Faction Agent, Zhentarim</option>
+		<option value="Urchin">Far Traveler</option>
+		<option value="FolkHero">Inheritor</option>
+		<option value="Soldier">Knight of the Order</option>
+		<option value="Soldier">Mercenary Veteran</option>
+		<option value="Criminal">Urban Bounty Hunter</option>
+		<option value="Outlander">Uthgardt Tribe Member</option>
+		<option value="Noble">Waterdhavian Noble</option>
 	</select> 
-
+	
 	<span style="margin-left:20px">Charisma:</span>
 	<select id="charisma">
 		<option>+5</option>
@@ -181,12 +203,18 @@
 		var race = $( "#race option:selected" ).text();
 		var classs = $( "#class option:selected" ).text();
 		var background = $( "#background option:selected" ).text();
+		var backgroundVal = $( "#background option:selected" ).val();
 		var age = $( "#age option:selected" ).text();
 
 		if(race == "Randomize (PHB)") race = RollTable(Race);
 		else if(race == "Randomize (All Core)") race = RollTable(RaceAll);
 		if(classs == "Randomize") classs = RollTable(Class);
-		if(background == "Randomize") background = RollTable(Backgrounds);
+		
+		if(background == "Randomize") {
+			background = RollTable(Backgrounds);
+			backgroundVal = $('#background option:contains("'+background+'")').val();
+		}
+		
 		if(age == "Randomize") age = RollTable(Age);
 
 		//Basics
@@ -303,14 +331,14 @@
 		document.getElementById("ChildhoodMemories").innerHTML = RollTable(ChildhoodMemories, parseInt($( "#charisma option:selected" ).text()));
 
 		//Background
-		var backgroundString = "You became a " + background + " because; ";
-		switch(background) {
+		var backgroundString = "You became a " + background + " because: ";
+		switch(backgroundVal) {
 		    case "Acolyte": backgroundString += RollTable(Acolyte); break;
 		    case "Charlatan": backgroundString += RollTable(Charlatan); break;
 		    case "Criminal": backgroundString += RollTable(Criminal); break;
 		    case "Entertainer": backgroundString += RollTable(Entertainer); break;
-		    case "Folk Hero": backgroundString += RollTable(FolkHero); break;
-		    case "Guild Artisan": backgroundString += RollTable(GuildArtisan); break;
+		    case "FolkHero": backgroundString += RollTable(FolkHero); break;
+		    case "GuildArtisan": backgroundString += RollTable(GuildArtisan); break;
 		    case "Hermit": backgroundString += RollTable(Hermit); break;
 		    case "Noble": backgroundString += RollTable(Noble); break;
 		    case "Outlander": backgroundString += RollTable(Outlander); break;
