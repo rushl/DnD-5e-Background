@@ -575,20 +575,34 @@ var CauseOfDeath = {
 	"12": "Bizarre event, such as being hit by a meteorite, struck down by an angry god, or killed by a hatching slaad egg"
 };
 
+// var Class = { 
+	// "Dice": "1d100",
+	// "01-07": "Barbarian",
+	// "08-14": "Bard",
+	// "15-29": "Cleric",
+	// "30-36": "Druid",
+	// "37-52": "Fighter",
+	// "53-58": "Monk",
+	// "59-64": "Paladin",
+	// "65-70": "Ranger",
+	// "71-84": "Rogue",
+	// "85-89": "Sorcerer",
+	// "90-94": "Warlock",
+	// "95-100": "Wizard"
+// };
+
+// My version:
 var Class = { 
 	"Dice": "1d100",
-	"01-07": "Barbarian",
-	"08-14": "Bard",
-	"15-29": "Cleric",
-	"30-36": "Druid",
-	"37-52": "Fighter",
-	"53-58": "Monk",
-	"59-64": "Paladin",
-	"65-70": "Ranger",
-	"71-84": "Rogue",
-	"85-89": "Sorcerer",
-	"90-94": "Warlock",
-	"95-100": "Wizard"
+	"01-06": "Barbarian",
+	"07-15": "Bard",
+	"16-28": "Cleric",
+	"29-36": "Druid",
+	"37-53": "Fighter",
+	"54-61": "Paladin",
+	"62-70": "Ranger",
+	"71-87": "Rogue",
+	"88-100": "Wizard"
 };
 
 var Occupation = { 
@@ -611,17 +625,29 @@ var Occupation = {
 	"96-100": "Soldier"
 };
 
+// var Race = { 
+	// "Dice": "1d95",
+	// "01-40": "Human",
+	// "41-50": "Dwarf",
+	// "51-60": "Elf",
+	// "61-70": "Halfling",
+	// "71-75": "Dragonborn",
+	// "76-80": "Gnome",
+	// "81-85": "Half-elf",
+	// "86-90": "Half-orc",
+	// "91-95": "Tiefling"
+// };
+
+// My version:
 var Race = { 
-	"Dice": "1d95",
+	"Dice": "1d85",
 	"01-40": "Human",
 	"41-50": "Dwarf",
 	"51-60": "Elf",
 	"61-70": "Halfling",
-	"71-75": "Dragonborn",
-	"76-80": "Gnome",
-	"81-85": "Half-elf",
-	"86-90": "Half-orc",
-	"91-95": "Tiefling"
+	"71-75": "Gnome",
+	"76-80": "Half-elf",
+	"81-85": "Half-orc"
 };
 
 var RaceAll = { 
