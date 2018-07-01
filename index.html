@@ -124,7 +124,14 @@
 	</select> 
 
 	<br>
-	<p style="text-align: center"><a href="javascript:generate()" class="small" style="font-size: 30px" id="TellMe">Tell me my story.</a></p>
+	<p style="text-align: center">
+		<a href="javascript:generate()" class="small" style="font-size: 30px" id="TellMe">Generate Background</a> <br/>
+		<a href="javascript:generateAdventurer()" class="small" id="genAdv">Generate Adventurer</a> <br/>
+		<a href="javascript:generateVIP()" class="small" id="genAdv">Generate VIP</a> 
+	</p>
+	
+	<p id="generatedAdventurers" class="small"></p>
+	<p id="generatedVIPs" class="small"></p>
 
 	<p id="Basic" class="big"></p>
 
@@ -362,6 +369,13 @@
         } 
 
 	}
+	
+	function generateAdventurer() {
+		document.getElementById("generatedAdventurers").innerHTML += RollHashtags(CreateAdventurer()) + "<br/>";
+	}
+	function generateVIP() {
+		document.getElementById("generatedVIPs").innerHTML += RollHashtags(CreateVIP()) + "<br/>";
+	}
 
 	function CreateSibling(){
 
@@ -385,13 +399,19 @@
 
 	function CreateAdventurer(){
 		var advString = "";
-		advString += "<i>" + RollTable(Alignment) + " " + RollTable(Race) + " " + RollTable(Class) + ", " + RollTable(Backgrounds) + " - " + RollTable(Age) + "</i>";
+		advString += "<i>" + RollTable(Gender) + " " + RollTable(Race) + " " + RollTable(Class) + ", " + RollTable(Alignment) + "; " + RollTable(Backgrounds) + " - " + RollTable(Age) + "</i>";
 		return advString;
 	}
 
 	function CreateVIP(){
 		var vipString = "";
-		vipString += "<i>" + RollTable(Race) + " " + RollTable(Occupation) + " - " + RollTable(Age) + "</i>";
+		vipString += "<i>" + RollTable(Gender) + " " + RollTable(Race) + " " + RollTable(Occupation) + ", " + RollTable(Age) + "</i>";
+		return vipString;
+	}
+	
+	function CreateNonGenderVIP(){
+		var vipString = "";
+		vipString += "<i>" + RollTable(Race) + " " + RollTable(Occupation) + ", " + RollTable(Age) + "</i>";
 		return vipString;
 	}
 
@@ -416,6 +436,7 @@
 		str = str.replace("#AbsentMother", RollTable(AbsentMother)); 
 		str = str.replace("#MetAdventurer", CreateAdventurer()); 
 		str = str.replace("#VIP", CreateVIP());
+		str = str.replace("#NonGenderVIP", CreateNonGenderVIP());
 
 		var a = Roll("1d2");
 		if(a == 1){ 
@@ -565,8 +586,6 @@
 	}
 
 </script>
-
-
 
 </body>
 </html>
