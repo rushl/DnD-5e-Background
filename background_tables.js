@@ -322,7 +322,7 @@ var Fighter = {
 var Monk = { 
 	"Dice": "1d6",
 	"1": "You were chosen to study at a secluded monastery. There, you were taught the fundamental techniques required to eventually master a tradition.",
-	"2": "You sought instruction to gain a deeper understanding‘ of existence and your place in the world.",
+	"2": "You sought instruction to gain a deeper understanding' of existence and your place in the world.",
 	"3": "You stumbled into a portal to the Shadowfell and took refuge in a strange monastery, where you learned how to defend yourself against the forces of darkness.",
 	"4": "You were overwhelmed with grief after losing someone close to you, and you sought the advice of philosophers to help you cope with your loss.",
 	"5": "You could feel that a special sort of power lay within you, so you sought out those who could help you call it forth and master it.",
@@ -492,7 +492,7 @@ var SupernaturalEvent = {
 	"Dice": "1d100",
 	"01-05": "You were ensorcelled by a fey and enslaved for 1d6 years before you escaped.",
 	"06-10": "You saw a demon and ran away before it could do anything to you.",
-	"11-15": "A devil tempted you. Make a DC 10 Wisdom saving throw. On a failed save, your alignment shifts one step toward evil (ifit‘s not evil already), and you start the game with an additional 1d20 + 50 gp.",
+	"11-15": "A devil tempted you. Make a DC 10 Wisdom saving throw. On a failed save, your alignment shifts one step toward evil (if it's not evil already), and you start the game with an additional 1d20 + 50 gp.",
 	"16-20": "You woke up one morning miles from your home, with no idea how you got there.",
 	"21-30": "You visited a holy site and felt the presence of the divine there.",
 	"31-40": "You witnessed a falling red star, a face appearing inthe frost, or some other bizarre happening. You are certain that it was an omen of some sort.",
@@ -709,4 +709,10 @@ var Backgrounds = {
 	"11": "Sailor",
 	"12": "Soldier",
 	"13": "Urchin"
+};
+
+var Gender = { 
+	"Dice": "1d2",
+	"1": "Male",
+	"2": "Female"
 };

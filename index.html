@@ -162,7 +162,7 @@
 		document.getElementById("Parents2").innerHTML = "";
 		document.getElementById("SiblingDesc").innerHTML = "";
 
-		document.getElementById("TellMe").innerHTML = "Tell me another story.";
+		document.getElementById("TellMe").innerHTML = "Generate another background";
 
 		document.getElementById("FamilyTitle").innerHTML = "Family";
 		document.getElementById("ChildhoodTitle").innerHTML = "Childhood";
@@ -315,8 +315,9 @@
 		} 
 		document.getElementById("Background").innerHTML = backgroundString;
 
+		
 		//Class
-		var classString = "You became a " + classs + " because; ";
+		var classString = "You became a " + classs + " because: ";
 		switch(classs) {
 		    case "Barbarian": classString += RollTable(Barbarian); break;
 		    case "Bard": classString += RollTable(Bard); break;
@@ -378,7 +379,7 @@
 		    if (status.includes("Alive")) alive = "are"
         }
 
-		sibString += "A " + RollTable(Alignment).toLowerCase() + " " + RollHashtags(RollTable(Occupation)) + ". They " + alive + " " + RollTable(Relationship).toLowerCase() + " towards you. " + status;
+		sibString += "A " + RollTable(Gender).toLowerCase() + " " + RollTable(Alignment).toLowerCase() + " " + RollHashtags(RollTable(Occupation)) + ". They " + alive + " " + RollTable(Relationship).toLowerCase() + " towards you. " + status;
 		return sibString;
 	}
 
